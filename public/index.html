@@ -812,7 +812,22 @@
       if (e.key === 'Escape' && nav.classList.contains('open')) setOpen(false);
     });
 
-    // Generic scroll reveal — adds .is-in once when 25% in view
+    // Staggered grid reveal — feature/safety/area cards
+    // IMPORTANT: must run BEFORE the observer query below so .reveal nodes are included.
+    var gridSets = [
+      { sel: '.feature-grid .feature-card', step: 80 },
+      { sel: '.safety-grid .safety-item',   step: 70 },
+      { sel: '.area-grid .area-card',       step: 110 },
+    ];
+    gridSets.forEach(function(set){
+      var nodes = document.querySelectorAll(set.sel);
+      nodes.forEach(function(n, i){
+        n.classList.add('reveal');
+        n.style.animationDelay = (i * set.step) + 'ms';
+      });
+    });
+
+    // Generic scroll reveal — adds .is-in once when ~20% in view
     var targets = document.querySelectorAll('.section-head, .schedule-empty, .reveal');
     if (!('IntersectionObserver' in window) || matchMedia('(prefers-reduced-motion: reduce)').matches) {
       targets.forEach(function(t){ t.classList.add('is-in'); });
@@ -827,20 +842,6 @@
       }, { threshold: 0.18, rootMargin: '0px 0px -40px 0px' });
       targets.forEach(function(t){ io.observe(t); });
     }
-
-    // Staggered grid reveal — feature/safety/area cards
-    var gridSets = [
-      { sel: '.feature-grid .feature-card', step: 80 },
-      { sel: '.safety-grid .safety-item',   step: 70 },
-      { sel: '.area-grid .area-card',       step: 110 },
-    ];
-    gridSets.forEach(function(set){
-      var nodes = document.querySelectorAll(set.sel);
-      nodes.forEach(function(n, i){
-        n.classList.add('reveal');
-        n.style.animationDelay = (i * set.step) + 'ms';
-      });
-    });
   })();
 </script>
 </body>
