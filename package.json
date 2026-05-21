@@ -1,0 +1,18 @@
+{
+  "name": "propslab-site",
+  "version": "1.0.0",
+  "description": "Props Lab Event LP — 別府・大分の少人数制 街コン・婚活イベント",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node scripts/serve.mjs",
+    "preview": "node scripts/serve.mjs",
+    "optimize:images": "node scripts/optimize-images.mjs",
+    "deploy": "wrangler deploy",
+    "cf:tail": "wrangler tail"
+  },
+  "devDependencies": {
+    "sharp": "^0.34.5",
+    "wrangler": "^4.0.0"
+  }
+}

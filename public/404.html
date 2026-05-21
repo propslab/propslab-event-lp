@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>ページが見つかりません｜Props Lab Event</title>
+<meta name="robots" content="noindex" />
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,400;1,500&family=Noto+Sans+JP:wght@400;500;700&family=Shippori+Mincho+B1:wght@600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{--navy:#0D2A57;--beige:#F5EFE6;--ink:#1d2a44;--muted:#5b6479}
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;height:100%}
+  body{
+    font-family:"Noto Sans JP","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+    color:var(--ink);background:#fff;line-height:1.7;
+    display:flex;align-items:center;justify-content:center;
+    text-align:center;padding:40px 24px;min-height:100vh;
+  }
+  .wrap{max-width:540px}
+  .num{
+    font-family:"Cormorant Garamond",serif;font-style:italic;font-weight:500;
+    font-size:clamp(72px, 14vw, 128px);line-height:1;color:var(--navy);
+    letter-spacing:.04em;margin:0;
+  }
+  .rule{display:block;width:36px;height:1px;background:var(--navy);opacity:.3;margin:22px auto 28px}
+  h1{
+    font-family:"Shippori Mincho B1","Noto Serif JP",serif;
+    color:var(--navy);font-weight:700;font-size:22px;
+    margin:0 0 14px;letter-spacing:.04em;
+  }
+  p{color:var(--muted);font-size:14.5px;margin:0 0 32px;line-height:1.95}
+  .back{
+    display:inline-block;background:var(--navy);color:#fff;
+    padding:13px 32px;border-radius:8px;font-weight:700;font-size:14.5px;
+    transition:background .2s ease;
+  }
+  .back:hover{background:#163B72}
+  a{color:inherit;text-decoration:none}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <p class="num">404</p>
+    <span class="rule"></span>
+    <h1>ページが見つかりません</h1>
+    <p>お探しのページは移動または削除された可能性があります。<br />お手数ですがトップページからお探しください。</p>
+    <a class="back" href="/">トップへ戻る</a>
+  </div>
+</body>
+</html>

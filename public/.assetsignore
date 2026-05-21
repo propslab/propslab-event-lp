@@ -1,0 +1,5 @@
+# Files listed here are excluded from Cloudflare Workers Static Assets upload.
+# Syntax follows the same patterns as .gitignore.
+
+# Original PNGs (kept in git as source assets, but not deployed)
+assets/originals/
