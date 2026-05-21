@@ -398,6 +398,14 @@
     transition-delay:.5s;
   }
   .schedule-empty.is-in .schedule-empty-jp{opacity:1}
+  .schedule-empty-note{
+    margin:-10px 0 0;max-width:460px;
+    font-size:13.5px;line-height:1.95;color:#5b6479;text-align:center;
+    opacity:0;
+    transition:opacity .9s ease;
+    transition-delay:.7s;
+  }
+  .schedule-empty.is-in .schedule-empty-note{opacity:1}
   /* Atmospheric corner ornaments */
   .schedule::before, .schedule::after{
     content:"";position:absolute;width:160px;height:1px;
@@ -406,7 +414,7 @@
   .schedule::before{top:50%;left:0;transform:translateY(-50%)}
   .schedule::after{top:50%;right:0;transform:translateY(-50%)}
   @media (prefers-reduced-motion: reduce){
-    .schedule-line,.schedule-empty-en,.schedule-empty-jp{
+    .schedule-line,.schedule-empty-en,.schedule-empty-jp,.schedule-empty-note{
       transform:none !important;opacity:1 !important;transition:none !important;
     }
   }
@@ -514,11 +522,11 @@
     <button class="menu-toggle" aria-label="メニューを開閉" aria-expanded="false" aria-controls="primary-nav">☰</button>
     <nav class="nav" id="primary-nav" aria-label="メインナビゲーション">
       <a href="#overview">イベント概要</a>
-      <a href="#areas">募集エリア</a>
+      <a href="#areas">開催エリア</a>
       <a href="#schedule">開催予定</a>
       <a href="#safety">安心して参加するために</a>
       <a href="#operator">運営情報</a>
-      <a class="cta" href="#contact">お問い合わせ</a>
+      <a class="cta" href="mailto:hayama@props-lab.com">お問い合わせ</a>
     </nav>
   </div>
 </header>
@@ -536,7 +544,7 @@
         <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/></svg>
         開催予定を見る
       </a>
-      <a class="btn btn-orange" href="#contact">
+      <a class="btn btn-orange" href="mailto:hayama@props-lab.com">
         <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 7 9-7"/></svg>
         お問い合わせ
       </a>
@@ -552,7 +560,7 @@
       </span>
       <span class="chip">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v16M4 8h16M6 12l-2 4h4zM18 12l-2 4h4z"/></svg>
-        男女比で参加調整
+        男女比をできる限り調整
       </span>
     </div>
   </div>
@@ -723,6 +731,7 @@
       <span class="schedule-line" aria-hidden="true"></span>
       <p class="schedule-empty-en"><em>Coming Soon</em></p>
       <p class="schedule-empty-jp">近日公開予定</p>
+      <p class="schedule-empty-note">現在、最初のイベントを準備中です。日程の確定までもうしばらくお待ちください。</p>
       <span class="schedule-line schedule-line--bottom" aria-hidden="true"></span>
     </div>
   </div>
