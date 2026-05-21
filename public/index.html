@@ -31,10 +31,12 @@
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
 <link rel="apple-touch-icon" href="assets/favicon.svg" />
 
-<!-- Fonts -->
+<!-- Fonts — non-render-blocking via print/onload swap pattern -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Noto+Sans+JP:wght@400;500;700&family=Shippori+Mincho+B1:wght@500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Noto+Sans+JP:wght@400;500;700&family=Shippori+Mincho+B1:wght@500;600;700;800&display=swap" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Noto+Sans+JP:wght@400;500;700&family=Shippori+Mincho+B1:wght@500;600;700;800&display=swap" media="print" onload="this.media='all'" />
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Noto+Sans+JP:wght@400;500;700&family=Shippori+Mincho+B1:wght@500;600;700;800&display=swap" /></noscript>
 
 <!-- Preload hero image (LCP) -->
 <link rel="preload" as="image" href="assets/hero.webp" type="image/webp" fetchpriority="high" />
@@ -83,8 +85,8 @@
     --navy-2:#163B72;
     --white:#FFFFFF;
     --beige:#F6F2EC;
-    --orange:#F07A1A;
-    --orange-2:#D86A0F;
+    --orange:#C0570F;
+    --orange-2:#9F470A;
     --gray:#E6E9EE;
     --gray-2:#C9CFD8;
     --ink:#1d2a44;
@@ -356,37 +358,7 @@
   }
   .area-body p{margin:0;font-size:13.5px;color:#48536b}
 
-  /* ===== Schedule ===== */
-  .schedule-list{
-    list-style:none;margin:0 auto;padding:0;
-    max-width:760px;display:grid;gap:14px;
-  }
-  .schedule-card{
-    display:grid;grid-template-columns:120px 1fr;align-items:stretch;
-    background:#fff;border:1px solid #e6e9ee;border-radius:10px;overflow:hidden;
-    transition:transform .2s ease, box-shadow .2s ease;
-  }
-  .schedule-card:hover{transform:translateY(-2px);box-shadow:0 10px 22px rgba(13,42,87,.08)}
-  .schedule-status{
-    display:flex;align-items:center;justify-content:center;
-    background:#eef2f8;color:var(--navy);
-    font-weight:700;font-size:13px;letter-spacing:.08em;
-    padding:18px 12px;text-align:center;
-  }
-  .schedule-card.is-preparing .schedule-status{background:#f6f2ec;color:#8b6f3a}
-  .schedule-body{padding:18px 22px}
-  .schedule-body h3{
-    margin:0 0 6px;color:var(--navy);font-size:17px;font-weight:700;
-    font-family:"Shippori Mincho B1","Noto Serif JP",serif;letter-spacing:.02em;
-  }
-  .schedule-meta{margin:0 0 8px;font-size:13px;color:var(--muted);line-height:1.7}
-  .schedule-desc{margin:0;font-size:13.5px;color:#3a445d;line-height:1.85}
-  .schedule-note{
-    max-width:760px;margin:24px auto 0;text-align:center;
-    font-size:13px;color:var(--muted);line-height:1.85;
-  }
-  .schedule-note a{color:var(--navy);text-decoration:underline;text-underline-offset:2px}
-  /* Schedule — Quiet Anticipation empty state */
+  /* ===== Schedule — Quiet Anticipation empty state ===== */
   .schedule{padding:120px 0 110px;position:relative;overflow:hidden}
   .schedule .section-title{margin-bottom:6px}
   .schedule .section-rule{margin-bottom:10px;opacity:.22}
@@ -503,9 +475,6 @@
     .ov-row{grid-template-columns:130px 1fr}
     .ov-row dt{padding:14px;font-size:13.5px}
     .ov-row dd{padding:14px 18px;font-size:13.5px}
-    .schedule-card{grid-template-columns:1fr}
-    .schedule-status{padding:10px;font-size:12.5px;letter-spacing:.12em}
-    .schedule-body{padding:16px 18px}
     .nav{display:none}
     .nav.open{
       display:flex;flex-direction:column;align-items:stretch;gap:0;
@@ -549,6 +518,8 @@
     </nav>
   </div>
 </header>
+
+<main id="main">
 
 <!-- ============ HERO ============ -->
 <section id="top" class="hero">
@@ -770,6 +741,8 @@
     </div>
   </div>
 </section>
+
+</main>
 
 <!-- ============ OPERATOR / FOOTER ============ -->
 <footer id="operator" class="operator">
