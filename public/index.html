@@ -464,9 +464,20 @@
   .op-info dt{color:var(--navy);font-weight:700;margin:0}
   .op-info dd{margin:0;color:#2f3a55;word-break:break-word}
   .op-info a{color:var(--navy);text-decoration:underline;text-underline-offset:2px}
+  .legal-links{
+    text-align:center;margin-top:38px;padding-top:24px;
+    border-top:1px solid #e7e1d2;
+    font-size:13px;color:var(--muted);
+  }
+  .legal-links a{
+    color:var(--navy);text-decoration:none;
+    margin:0 14px;padding-bottom:2px;
+    border-bottom:1px solid transparent;transition:border-color .25s ease;
+  }
+  .legal-links a:hover{border-color:var(--navy)}
   .copyr{
     text-align:center;color:var(--muted);font-size:12.5px;
-    margin-top:42px;padding:18px 0 0;border-top:1px solid #e7e1d2;
+    margin-top:18px;padding:0;
   }
 
   /* ===== Responsive ===== */
@@ -779,6 +790,10 @@
         </dl>
       </div>
     </div>
+    <nav class="legal-links" aria-label="法務情報">
+      <a href="/tokushoho">特定商取引法に基づく表記</a>
+      <a href="/privacy">プライバシーポリシー</a>
+    </nav>
     <div class="copyr">© Props Lab</div>
   </div>
 </footer>
